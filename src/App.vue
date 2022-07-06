@@ -52,8 +52,8 @@ export default {
       const suffix = ')'
       let dynamic = '';
       for (let i = 0; i <= 100; i++) {
-        let angle = this.phase/(2*Math.PI) + this.wavelength * 0.0001 *(Math.PI * 2 * i)
-        dynamic += `${i}% ${(this.minimum + this.amplitude*(Math.sin(angle))).toFixed(1)}%${i === 100 ? '' : ','}`
+        let angle = this.phase/(2*Math.PI) + this.wavelength * 0.0001 *(Math.PI * 2 * i);
+        dynamic += `${i}% ${(parseInt(this.minimum) + this.amplitude*(Math.sin(angle))).toFixed(1)}%${i === 100 ? '' : ','}`
       }
       return  prefix + dynamic + suffix
     }
@@ -65,11 +65,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: white;
+  color: #f2f2f2;
 }
 .swoopy {
   background-image: linear-gradient(270deg, #1b4d8b, #9f458f);
   padding: 50px 40px 200px;
+  overflow: visible;
 }
 .output {
   margin-top: 16px;
